@@ -17,9 +17,10 @@ This project is a Laravel-based application with user authentication and project
 ### Installation Steps:
 
 1. **Clone the Repository**  
-   ```sh
-   git clone https://github.com/your-repo/project.git
-   cd project
+   ```ssh
+   by using ssh 
+   git clone git@github.com:Mohamedeid11/assignment-.git
+   cd assignment-
    ```
 
 2. **Install Dependencies**  
@@ -34,17 +35,28 @@ This project is a Laravel-based application with user authentication and project
    cp .env.example .env
    ```
 
-4. **Generate Application Key**  
+4. **Configure Environment**  
+   Copy `.env.example` to `.env`:
    ```sh
-   php artisan key:generate
+   cp .env.example .env
    ```
 
-5. **Run Migrations & Seed Database**  
+5. **update the database credentials**  
+   ```
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE={your database name}
+    DB_USERNAME={database user name}
+    DB_PASSWORD={database password}
+   ```
+
+6. **Run Migrations & Seed Database**  
    ```sh
    php artisan migrate --seed
    ```
 
-6. **Start the Development Server**  
+7. **Start the Development Server**  
    ```sh
    php artisan serve
    ```
@@ -352,12 +364,12 @@ GET /api/projects
 ```
 Authorization: Bearer {token}
 ```
-**Query Parameters:**
+#### **Query Parameters:**
 
-#### **.``name`` (optional): Filter projects by name.**
-#### **.``status`` (optional): Filter projects by status.**
-#### **.Custom filters (optional): Additional filters can be applied using the format**
-**``attribute[operator]=value``.**
+ 1. **``name`` (optional): Filter projects by name.**
+ 2. **``status`` (optional): Filter projects by status.**
+ 3. **Custom filters (optional): Additional filters can be applied using the format**
+  **``attribute[operator]=value``.**
 
 **Response Example (Success):**
 ```json
